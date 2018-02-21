@@ -1,0 +1,19 @@
+{
+  "name": "burgerhw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fumbanksd/BurgerHW.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fumbanksd/BurgerHW/issues"
+  },
+  "homepage": "https://github.com/fumbanksd/BurgerHW#readme"
+}
