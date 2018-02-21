@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="jumbotron vertical-center">
+                <h1>Eat-Da-Burger <span><img src="https://img.clipartfest.com/56c4973d00c0c3d0972cda28077ba7f4_download-full-size-free-hamburger-clipart-with-transparent-background_500-370.png" class="img-circle" alt="" width="304" > </span></h1>
+                <p>Enter the burger you wish to eat and then devour it!!!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <h3>These are ready to be eaten!</h3> 
+            {{#each burgers}} 
+              {{#unless this.devoured}}
+            <div class="panel panel-default">
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <div class="panel-body"> {{this.id}}. {{this.burger_name}} <span><button type="submit" class="btn" align="right">Devour It!</button></span></div>
+                </form>
+            </div>
+              {{/unless}}
+            {{/each}}
+        </div>
+        <div class="col-sm-3">
+            <h3>These have been eaten!</h3> 
+            {{#each burgers}}
+              {{#if this.devoured}}
+            <ul class="list-group">
+                <li class="list-group-item">{{this.id}}. {{this.burger_name}}</li>
+            </ul>
+              {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <h3>Create a Burger!</h3>
+                <form method="POST" action="/" class="button-size">
+                    <textarea type="text" class="form-control" name="burger"></textarea>
+                    <button type="submit" class="btn">Make The Burger!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
